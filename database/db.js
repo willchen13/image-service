@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 mongoose.connect('mongodb://localhost/yelpImages');
 var db = mongoose.connection;
