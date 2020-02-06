@@ -22,6 +22,7 @@
   "homepage": "https://github.com/TeamofThr33/photo-gallery-modal#readme",
   "dependencies": {
     "axios": "^0.19.2",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongo-seeding": "^3.4.0-alpha.1",
     "mongoose": "^5.8.9",

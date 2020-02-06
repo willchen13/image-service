@@ -1,6 +1,7 @@
 import React from 'react';
+import axios from 'axios';
 import {ImageModal} from './Imagemodal.jsx'
-import { imageData } from '../dist/fakeData';
+
 import ImageSlider from './ImageSlider.jsx';
 import { ChildDiv, ParentDiv,
    ImageModalChildDiv, ImageButton, ImageWrapper} from './styling';
@@ -11,6 +12,7 @@ import { ChildDiv, ParentDiv,
          super(props)
          this.state = {
             isShowing: false,
+            imageData: null,
          }
          this.handleClick = this.handleClick.bind(this);
       }
@@ -29,13 +31,34 @@ import { ChildDiv, ParentDiv,
              isShowing: false
          });
      }
+
+     getData(){
+      axios.get('http://localhost:3004/images')
+         .then((response) => {
+            
+            const imageData = response.data.images;
+            this.setState({
+               imageData: imageData
+            })
+            
+         })
+      
+      };
+
+     componentDidMount() {
+        this.getData();
+        
+     }
       
       render() {
-     let data = imageData;
+     let data = this.state.imageData;
+    
+     
+     
 
      return (
       <ParentDiv>
-         {!this.state.isShowing && 
+         {(!this.state.isShowing && this.state.imageData) && 
        <ImageSlider>
         {data.map((image, index) => {
          return (
@@ -48,14 +71,15 @@ import { ChildDiv, ParentDiv,
         })}
        </ImageSlider>
       }
-
+      {this.state.isShowing &&
       <ImageModal
       show={this.state.isShowing}
       close={this.closeModalHandler}
-      currentImage={data[0].images[0]}
-      images={imageData}
+      currentImage={this.state.imageData || null}
+      images={this.state.imageData || null}
       >
       </ImageModal>
+      }
       
        </ParentDiv>
       

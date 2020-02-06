@@ -8,12 +8,13 @@ export class ImageModal extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            data: this.props.data || []
+            data: this.props.images || null
         }
     }
 
     render() {
-        let data = this.props.images;
+        let data = this.state.data;
+        console.log("This.state.data ",this.state.data);
         return (
             <ModalWrapper
                 style={{
@@ -22,7 +23,8 @@ export class ImageModal extends React.Component {
                     
                 }}>
                     <ImageModalMainImg>
-                    <ImageModalWrapper src={this.props.currentImage+".jpg"}></ImageModalWrapper>
+                        
+                    <ImageModalWrapper src={data[0].images[0]+".jpg"}></ImageModalWrapper>
                     
                     </ImageModalMainImg>
                 <ImageModalRightColumn>

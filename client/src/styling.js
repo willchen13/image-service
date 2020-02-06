@@ -157,7 +157,8 @@ export const ImageModalRightColumnImg = styled.img`
 `
 
 export const ImageModalButton = styled.button`
-	height: inherit;
-    width: inherit;
+	height: 50px;
+    width: 50px;
+	z-index: 1000;
 `
 
