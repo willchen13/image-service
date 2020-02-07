@@ -13,8 +13,9 @@ app.use(express.json());
 app.use(cors());
 
 
-app.get('/images/', (req, res) => {
-  db.find()
+app.get('/images', (req, res) => {
+ console.log("request receiver") 
+	db.find()
   .then(images => {
     res.json({
   images
