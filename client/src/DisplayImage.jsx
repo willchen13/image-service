@@ -33,7 +33,7 @@ import { ChildDiv, ParentDiv,
      }
 
      getData(){
-      axios.get('http://localhost:3004/images')
+      axios.get('/images')
          .then((response) => {
             
             const imageData = response.data.images;
