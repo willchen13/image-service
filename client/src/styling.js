@@ -101,7 +101,7 @@ export const ModalWrapper = styled.div`
     border: 1px solid #d0cccc;
     box-shadow: 0 5px 20px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
 	transition: all .8s;
-
+	
 
 `
 
@@ -157,8 +157,13 @@ export const ImageModalRightColumnImg = styled.img`
 `
 
 export const ImageModalButton = styled.button`
-	height: 50px;
-    width: 50px;
+	background: gray;
+    position: absolute;
+    margin-left: 1297px;
 	z-index: 1000;
+	width: 20px;
+	height: 20px;
+
 `
+
 

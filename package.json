@@ -7,7 +7,8 @@
     "seeding-script": "node ./database/seeding.js",
     "react-dev": "webpack -w",
     "start": "nodemon ./server/index.js",
-    "test": "jest"
+    "test": "jest",
+    "webpack-p": "webpack -p"
   },
   "repository": {
     "type": "git",
