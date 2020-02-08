@@ -20,8 +20,11 @@ export class ImageModal extends React.Component {
                 style={{
                     transform: this.props.show ? 'translateY(0vh)' : 'translateY(-500vh)',
                     opacity: this.props.show ? '1' : '0',
+                    zIndex: this.props.show ? "11": "0",
+                    position: this.props.show ? "absolute" : "static"
                     
                 }}>
+                    <ImageModalButton onClick={this.props.close}> X</ImageModalButton>
                     <ImageModalMainImg>
                         
                     <ImageModalWrapper src={data[0].images[0]+".jpg"}></ImageModalWrapper>
@@ -32,7 +35,7 @@ export class ImageModal extends React.Component {
                 {data.map((image, index) => {
          return (
           <ImageModalChildDiv key={index}>
-             <ImageModalButton onClick={this.handleClick}>
+             <ImageModalButton onClick={this.props.close}>
            <ImageModalRightColumnImg src={image.images[0]+".jpg"}></ImageModalRightColumnImg>
            </ImageModalButton>
           </ImageModalChildDiv>
