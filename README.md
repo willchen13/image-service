@@ -1,6 +1,6 @@
 # Yelp Web Application
 
-> Hack Reactor Front End Capstone Project
+> Hack Reactor System Designs Capstone Project
 
 ## Related Projects
 
